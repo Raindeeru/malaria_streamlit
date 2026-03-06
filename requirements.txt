@@ -1,5 +1,13 @@
-streamlit==1.32.0
+# 1. Force the lightweight CPU-only PyTorch so the server doesn't run out of memory
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+torchvision
+
+# 2. The core web and vision libraries
+streamlit
 ultralytics
 numpy
 Pillow
+
+# 3. The headless OpenCV (strips out the GUI tools that cause the libGL error)
 opencv-python-headless
